@@ -1,0 +1,21 @@
+{
+  "name": "coremodule132005",
+  "version": "1.0.0",
+  "description": "This is my first node module",
+  "keywords": [],
+  "homepage": "https://github.com/AlphaGaurav13/CoreModules#readme",
+  "bugs": {
+    "url": "https://github.com/AlphaGaurav13/CoreModules/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/AlphaGaurav13/CoreModules.git"
+  },
+  "license": "ISC",
+  "author": "gauravkumar132005",
+  "type": "commonjs",
+  "main": "http.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  }
+}
