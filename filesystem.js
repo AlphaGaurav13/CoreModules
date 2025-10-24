@@ -31,7 +31,7 @@ var fs = require('fs');
 //   }
 // })
 
-var content = "Hi, this is node js class";
+// var content = "Hi, this is node js class";
 // sync writing
 
 // fs.writeFileSync("CoreModule/fwrite.txt", content);
@@ -49,21 +49,38 @@ var content = "Hi, this is node js class";
 
 // file copying 
 
-fs.copyFileSyn("test.txt", "testcopy.txt");
+// fs.copyFileSyn("test.txt", "testcopy.txt");
 
 
-fs.copyFile("test.json", "testcopy.json", (err) => {
-  if(err) {
-    console.log(err);
-  }
-})
+// fs.copyFile("test.json", "testcopy.json", (err) => {
+//   if(err) {
+//     console.log(err);
+//   }
+// })
 
 
 
-// deleting file the files  || unlinkSync ||  unlink
+// // deleting file the files  || unlinkSync ||  unlink
 
-fs.unlink("test.json", (err) => {
-  if(err) {
-    console.log(err);
-  }
+// fs.unlink("test.json", (err) => {
+//   if(err) {
+//     console.log(err);
+//   }
+// })
+
+
+var http = require("http");
+
+
+http.createServer((req, res) => {
+  fs.readFile("test.txt", "utf-8", (err, data) =>  {
+    if(err) {
+      res.end(err)
+    }else {
+      res.writeHead(200, {'content-type': 'text/plain'})
+      res.end(data);
+    }
+  })
+}).listen(3001, () => {
+  console.log("open browser at http://localhost:3001");
 })
